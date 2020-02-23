@@ -4,7 +4,7 @@ header h2 {
 }
 
 body{
-	background-color: yellow
+	background-color: #D3D3D3
 }
 
 nav{
@@ -39,4 +39,17 @@ nav .active{
 body footer{
 	text-align: center;
 	font-size: 20px;
+}
+
+#events table{
+	text-align: left;
+	font-weight: bold;
+	font-family: Helvetica, Arial, sans-serif;
+	border-collapse: collapse;
+	width: 500px;
+}
+
+td{
+	border: 3px solid #191970;
+	height: 50px;
 }
