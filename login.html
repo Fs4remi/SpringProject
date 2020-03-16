@@ -1,40 +1,58 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>login page</title>
-	<link rel="stylesheet" type="text/css" href="club.css">
-</head>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Member Login
+        </title>
+        <link href="../output/club.css" rel="stylesheet">
+        <script src = login.js> </script>
+        <script src="navClick.js"></script>
+         
+    </head>
+    <body>
+        <div>
+            <div id = 'overlay'>
+                <h5> CLICK FOR NAV </h5>
+            </div>
+            <nav id = 'navigation'>
+                
+<ul>
+    <li><a href="index.html">Home</a></li>
 
-<body>
-	<nav>
-		<ul>
-        	<li><a href="activities.html">Activities</a></li>
-        	<li><a href="about.html">About</a></li>
-        	<li><a href="index.html">Home</a></li>
-        	<li><a href="membership.html">Membership</a></li>
-        	<li class = "active"><a href="login.html">Log In</a></li>
-      </ul>
-	</nav>
-	<h1>Log in 😦</h1>
-	<main>
-		<header>
-			<h2>Log in page</h2>
-		</header>
-		<div id = "login div">
-			<input type="text" id = "useremail" name="inputemail" placeholder="Enter your email">
-			<input type="password" id="userpassword" name="inputpassword" placeholder="Choose a pass">
-			<input type="submit" id = "log in button" value="log in">
-		</div>
-	</main>
-	<footer>
-		&copy; 2020 Fatemeh Saremi 
-	</footer>
+    <li class = "active"><a href="about.html">About</a></li>
 
-	<script type="text/javascript">
-		const button = document.getElementById('log in button');
-		button.addEventListener('click', () => {
-			console.log('Email: '+ useremail.value + ' password:' + userpassword.value);
-		});
-	</script>
-</body>
+    <li><a href="activities.html">Activities</a></li>
+    
+    <li><a href="membership.html">Membership</a></li>
+
+    <li><a href="login.html">Log In</a></li>
+</ul>
+
+
+            </nav>
+        </div>
+        
+        <main>
+            <!-- <h1>Log in 😦</h1> -->
+	
+	
+<div id = "loginDiv">
+	<header class = 'decription'>
+		<h2>Log in page</h2>
+	</header>
+	<label for = 'inputemail' class = 'emailLable'>User name</label>
+	<input type="text" id = "useremail" class = 'email' name="inputemail" placeholder="Enter your email">
+
+	<label for = 'inputpassword' class = 'passwordLable'>Password</label>
+	<input type="password" id="userpassword" class = 'password' name="inputpassword" placeholder="Choose a pass">
+
+	<input type="submit" class = 'button' value="log in">
+</div>
+	
+        </main>
+        <footer>
+            <p>&copy; 2020 Fatemeh Saremi </p>
+        </footer>
+    </body>
 </html>
