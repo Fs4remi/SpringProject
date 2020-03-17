@@ -18,9 +18,7 @@ nav{
     margin-left: 50px;
 	max-width: 10em;
 	padding: 10px;
-   
-    list-style-type: none;
-
+    
     justify-content: top;
     align-items: center;
     position: fixed;
@@ -29,6 +27,9 @@ nav{
     z-index: 30;
 }
 
+nav ul{
+    list-style-type: none;
+}
 main {
 	background-color: #98FB98;
 	border: 10px solid #5F9EA0;
