@@ -1,52 +1,116 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>membership page</title>
-	<link rel="stylesheet" type="text/css" href="club.css">
-</head>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="title" content= "">
+        <meta name="script" content="">
+        <meta name="script1" content="">
 
-<body>
-	<nav>
-		<ul>
-        	<li><a href="activities.html">Activities </a></li>
-        	<li><a href="about.html">About</a></li>
-        	<li><a href="index.html">Home</a></li>
-        	<li class = "active"><a href="membership.html">Membership</a></li>
-        	<li><a href="login.html">Log In</a></li>
-        </ul>
-	</nav>
-	<h1>Membership &#x1F60E</h1>
-	<main>
-		<header>
-			<h2>Sign up to be a member shape </h2>
-		</header>
+        <title>
+            
+        </title>
+       
+        <link href="club.css" rel="stylesheet">
+        
+        <script src =""> </script>
+        <script src =""> </script>
+        <script src= "navClick.js"> </script> 
+         
+    </head>
+    <body>
+        <div>
+            <div id = 'overlay'>
+                <h5> CLICK FOR NAV </h5>
+            </div>
+            <nav id = 'navigation'>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
 
-		<div>
-			<label for="membername">Name: </label>
-			<input type="text" name="membername" placeholder="Your full name">
-			<label for="memberemail">Email: </label>
-			<input type="Email" name="memberemail" placeholder="@gmail.com">
+                    <li class = "active"><a href="about.html">About</a></li>
 
-			<input type="checkbox" name="isStudent" value="yes">
-			<label for="isStudent">I am a student</label>
+                    <li><a href="activities.html">Activities</a></li>
+                    
+                    <li><a href="membership.html">Membership</a></li>
 
-			<input type="checkbox" name="isEmployed" value="yes">
-			<label for="isEmployed">I am employed</label>
+                    <li><a href="login.html">Log In</a></li>
+                </ul>
+            </nav>
+        </div>
+        <h1></h1>
+        
+        <main>
+            
+<div class = 'grid' id = 'forms'>
+	<header class = 'heading'>
+		<h5>Sign up to be a member! </h5>
+	</header>
+	<label for="membername" class = 'nameLable'>Name: </label>
+	<input type="text" id = 'membername' class = 'name' name="membername" placeholder="Your full name" required>
+	
+	<label for="memberemail" class = 'emailLable'>Email: </label>
+	<input type="Email" id = "membermail" class = 'email' name="memberemail" placeholder="@gmail.com" required>
 
-			<input type="submit" value="sign up">
+	<label for="isStudent" class = 'studentLable'>I am a student</label>
+	<input type="checkbox" id = "isStudent" class = 'student' name="isStudent">
 
-			<label for="something">Are your reletives a memeber with us?</label>
-			<select id='something'>
-				<option value="yes">Yes</option>
-				<option value="no">No</option>
-			</select>
-		</div>
+	<label for="isEmployed" class = 'workLable'>I am employed</label>
+	<input type="checkbox" id = "isEmployed" class = 'work' name="isEmployed">
+
+	<label for="something" class = 'relativeQuestion'>Are your reletives a memeber with us?</label>
+	<select id='something' class = 'family'>
+		<option value="yes">Yes</option>
+		<option value="no">No</option>
+	</select>
+
+	<input type="submit" id = "submit" class = 'button' name="sign up">
+</div>
+<section id="ThanksDialog" class = "ShowDialog">
+	<h2>Thanks for applying to our club. Here is a summary of the information you gave us</h2>
+	<p></p>
+	<input type= "submit" id= "close" class = 'button' value="Close">
+</section>
+
+<script>
+	
+	const button = document.getElementById('submit');
+
+	button.addEventListener('click', ()=>{
+		const section = document.getElementById('ThanksDialog');
+
+		const information = section.getElementsByTagName('p')[0];
 		
-	</main>
-	<footer>
-		&copy; 2020 Fatemeh Saremi 
-	</footer>
+		const name = document.getElementById('membername').value;
+		const email = document.getElementById('membermail').value;
+		const student = document.getElementById('isStudent').checked;
+		const worker = document.getElementById('isEmployed').checked;
+		const option = document.getElementById('something').value;
+
+		if(name.length > 0 && email.length > 0){
+			information.innerHTML += name + " ";
+			information.innerHTML += email + " ";
+			if(student)
+				information.innerHTML += ". You are a student";
+			if(worker)
+				information.innerHTML += ". You work.";
+			section.style = 'display:block';
+
+			document.getElementById('forms').style.opacity = 0.1;
+		}
+	});
+
+	const closeButton = document.getElementById('close');
+	closeButton.addEventListener('click', ()=>{
+		const section = document.getElementById('ThanksDialog');
+		section.style = 'display: none';
+		document.getElementById('forms').style.opacity = 1;
+	});
+
+</script>
 
 	
-</body>
-</html>  
+        </main>
+        <footer>
+            <p>&copy; 2020 Fatemeh Saremi </p>
+        </footer>
+    </body>
+</html>

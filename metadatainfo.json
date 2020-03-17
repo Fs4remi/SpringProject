@@ -1,7 +1,0 @@
-[
-    {"filename": "index.html", "ptitle": "Index page"},
-    {"filename": "about.html", "ptitle": "About page"},
-    {"filename": "activities.html", "ptitle": "Activity page", "pscript":"activities.js"},
-    {"filename": "login.html", "ptitle": "Member Login", "pscript":"login.js"},
-    {"filename": "membership.html", "ptitle": "Sign up", "pscript":"membership.js"}
-]

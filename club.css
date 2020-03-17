@@ -4,32 +4,69 @@ header h2 {
 }
 
 body{
-	background-color: #D3D3D3
+    background-color: #D3D3D3;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 nav{
 	background-color: #9370DB;
 	border: 10px dashed #FF8C00;
 	font-size: larger;
-	margin: 50px;
+    margin-top: 50px;
+    margin-left: 50px;
 	max-width: 10em;
-	padding: 0.5em;
+	padding: 10px;
+   
+    list-style-type: none;
 
-	list-style-type: none
+    justify-content: top;
+    align-items: center;
+    position: fixed;
+    align-self: flex-end;
+    display: none;
+    z-index: 30;
 }
 
-nav li {
-	color: #C71585
-}
-h1{
-	text-align: center;
-	font-size: 50px;
-}
 main {
 	background-color: #98FB98;
 	border: 10px solid #5F9EA0;
 	margin: 50px;
-	padding: 1em
+    padding: 1em;
+    width: 800px;   
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-self: center;
+    width: 800px;
+}
+
+#overlay{
+    z-index: 1;
+    display: flex; 
+    position: fixed;
+    z-index: 1;
+    height: 60px;
+    width: 60px;
+    margin-top: 50px;
+    margin-left: 50px;
+    background-color: yellow;
+    border: 2px dashed red;
+    align-items: center; 
+    border-radius: 16px;
+   
+}
+nav li {
+	color: #C71585
+}
+
+h1{
+	text-align: center;
+	font-size: 50px;
 }
 
 nav .active{
@@ -38,7 +75,7 @@ nav .active{
 
 body footer{
 	text-align: center;
-	font-size: 20px;
+    font-size: 20px;
 }
 
 #events table{
@@ -52,4 +89,132 @@ body footer{
 td{
 	border: 3px solid #191970;
 	height: 50px;
+}
+
+.ShowDialog {
+    display: none;
+}
+
+.grid {
+    align-self: center;
+    display: grid;
+    grid-template-columns: auto 15% 60%; 
+    grid-template-rows: 15% 7% 7% 7% 7% 10% 10%;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    grid-template-areas: 
+    "heading . ."
+    ". nameLable name"
+    ". emailLable email"
+    ". studentLable student"
+    ". workLable work"
+    ". relativeQuestion family"
+    "button . .";
+    margin: 2px;
+}
+
+.heading {
+    grid-area: heading;
+    justify-self: end;
+    font-size: 30px;
+}
+
+.nameLable {
+    grid-area: nameLable;
+    justify-self: end;
+    font-weight: bold;
+}
+
+.emailLable {
+    grid-area: emailLable;
+    justify-self: end;
+    font-weight: bold;
+}
+
+.studentLable {
+    grid-area: studentLable;
+    justify-self: end;
+    font-weight: bold;
+}
+
+.workLable {
+    grid-area: workLable;
+    justify-self: end;
+    font-weight: bold;
+}
+
+.relativeQuestion{
+	grid-area: relativeQuestion;
+    justify-self: end;
+    font-weight: bold;
+}
+
+.name {
+    grid-area: name;
+}
+
+.email {
+    grid-area: email;
+}
+
+.student {
+    grid-area: student;
+}
+
+.work {
+    grid-area: work;
+}
+
+.family {
+    grid-area: family;
+}
+
+
+.button {
+    font-size: 15px;
+    font-weight: bold;
+    grid-area: button;
+    width: 60%;
+    justify-self: center;
+    font: inherit;
+    padding: 0.5rem 1.5rem;
+    border: 5px dotted purple;
+    border-radius: 6px;
+}
+
+#ThanksDialog {
+    display: none;
+    position: absolute;
+    z-index: 50;
+    top: 30%;
+    left: 20%;
+    background: purple;
+    padding: 3rem;
+  }
+
+#loginDiv{
+	display: grid;
+	grid-template-columns: auto 15% 60%; 
+    grid-template-rows: 25% 10% 10% 20% ;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+	grid-template-areas:
+	'heading . .'
+	'. emailLable email'
+	'. passwordLable password'
+	'button . .'
+}
+
+.decription{
+	grid-area: heading;
+}
+
+.passwordLable{
+	grid-area: passwordLable;
+	justify-self: end;
+    font-weight: bold;
+}
+
+.password{
+	grid-area: password;
 }

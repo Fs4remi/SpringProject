@@ -1,9 +1,8 @@
 const generateTable = () =>{
-	console.log('in generateTable function');
+	const table = document.getElementById('activityTable');
 
-	const table_body = document.getElementById("events").querySelector('tbody');
-	
 	let fragment = document.createDocumentFragment();
+	
 	events.forEach(item => {
 		let tr_ele = document.createElement('tr');
 
@@ -18,11 +17,20 @@ const generateTable = () =>{
 		fragment.appendChild(tr_ele);
 	})
 
-	table_body.appendChild(fragment);
+	table.appendChild(fragment);
 
-	console.log(table_body);
-
-
+	console.log(table);
 };
 
-window.onload = generateTable;
+let navOverlayHandler = () => {
+    document.getElementById('overlay').addEventListener('click', ()=> {
+        document.getElementById('navigation').style = 'display : block';
+    });
+};
+
+window.onload = event => {
+	console.log('YOOOOOOOO');
+	generateTable();
+	navOverlayHandler();
+
+}
