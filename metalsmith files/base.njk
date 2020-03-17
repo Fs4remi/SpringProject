@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="title" content= "{{title}}">
+        <meta name="script" content="{{script}}">
+        <meta name="script1" content="{{script1}}">
+
+        <title>
+            {{title}}
+        </title>
+       
+        <link href="club.css" rel="stylesheet">
+        
+        <script src ="{{script}}"> </script>
+        <script src ="{{script1}}"> </script>
+        <script src= "navClick.js"> </script> 
+         
+    </head>
+    <body>
+        <div>
+            <div id = 'overlay'>
+                <h5> CLICK FOR NAV </h5>
+            </div>
+            <nav id = 'navigation'>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+
+                    <li class = "active"><a href="about.html">About</a></li>
+
+                    <li><a href="activities.html">Activities</a></li>
+                    
+                    <li><a href="membership.html">Membership</a></li>
+
+                    <li><a href="login.html">Log In</a></li>
+                </ul>
+            </nav>
+        </div>
+        <h1>{{pageHeading}}</h1>
+        {# A <h1> for emojis and papge title #}
+        <main>
+            {{contents | safe}}
+        </main>
+        <footer>
+            <p>&copy; 2020 Fatemeh Saremi </p>
+        </footer>
+    </body>
+</html>
